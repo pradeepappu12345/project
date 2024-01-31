@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="1.jpeg">
+    <title>Eurogreen_home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        /* Custom styles for the navbar */
+        #rty {
+            padding: 2.5%;
+            background-color: #ffffff;
+            transition: background-color 0.5s ease;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add subtle box shadow */
+        }
+
+        .navbar {
+            transition: all 0.5s ease;
+        }
+
+        /* Custom styles for the close button */
+        .btn-close {
+            display: none;
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            z-index: 1050;
+        }
+
+        /* Styles for mobile view */
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100%;
+                background-color: white;
+                transition: left 0.3s ease;
+                padding-top: 1rem;
+                margin-left: 0 !important;
+            }
+
+            .navbar-collapse.show {
+                left: 0;
+            }
+
+            .navbar-collapse.show .btn-close {
+                display: block;
+            }
+
+            .navbar-nav {
+                margin-right: 30%;
+            }
+        }
+
+        /* Non-responsive view adjustments */
+        #navbarNav {
+            margin-left: 30%;
+            font-weight: bold;
+        }
+
+        #kite {
+            padding-top: 15ex;
+        }
+
+        #epl {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        #canara {
+            padding: 30px;
+            padding-left: 50px;
+            padding-top: 50px;
+        }
+
+        #waveButton {
+            background-color: #00b309;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            outline: none;
+            font-size: 16px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #waveButton:hover {
+            background-color: #108015;
+            box-shadow: 0 0 50px #00ff95;
+        }
+
+        #waveButton::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            transition: width 0.3s, height 0.3s, transform 0.3s, opacity 0.3s;
+            pointer-events: none;
+            transform-origin: center;
+            left: var(--x);
+            top: var(--y);
+        }
+
+        #waveButton:hover::after {
+            transform: scale(3);
+            opacity: 0;
+        }
+
+        .kite {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 50px;
+            margin-top: 50px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media only screen and (max-width: 600px) {
+            .for {
+                size: 2%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg" id="rty">
+    <div class="container-fluid">
+        <img src="2.png" alt="" style="width: 200px;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <button class="btn-close" id="navbarClose"></button>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" id="ttt" href="#" style="margin-right: 20px; color: black;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="uuu" style="margin-right: 20px;color: black; ">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="ooo" style="margin-right: 20px; color: black;">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="lll" style="margin-right: 20px; color: black;">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="mmm" href="#" style="color: black;">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="row" id="kite">
+    <div class="col-sm-5" id="canara">
+        <div class="container">
+            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-weight: 600; font-size: 40px;">Crafting the Future, One Brick at a Time</h1>
+            <p>Transforming visions into reality with superior construction quality and dedicated service.</p>
+            <br><button id="waveButton">Connect with Us <i class="fa-solid fa-angle-right" style="margin-left: 10px;"></i></button>
+        </div>
+    </div>
+    <div class="col-sm-7">
+        <div class="container">
+            <img src="1.jpg" alt="" id="epl" class="for img-fluid">
+        </div>
+    </div>
+</div><br><br>
+
+<div class="kite" id="abca">
+    <center>
+        <h3 style="color: #00b309;">Our Services</h3>
+        <h1>Why Choose Us?</h1>
+        <p style="padding-left: 20%;padding-right: 20%;padding-top: 2%;">
+            At <b style="font-family: 'Lucida Handwriting', 'Brush Script MT';" >Lorem</b>, ipsum dolor sit amet consectetur adipisicing elit.
+            Odit inventore reiciendis cupiditate facilis tenetur in rerum iusto esse laudantium alias unde asperiores ut blanditiis officiis
+            deserunt nam non temporibus, animi reprehenderit saepe distinctio, amet exercitationem natus? Accusamus molestias aliquam quod.
+        </p>
+    </center>
+    <br>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarClose = document.querySelector('#navbarClose');
+        const navbarMenu = document.querySelector('.navbar-collapse');
+        const navbar = document.getElementById('rty');
+
+        navbarToggler.addEventListener('click', function () {
+            navbarMenu.classList.toggle('show');
+        });
+
+        navbarClose.addEventListener('click', function() {
+            navbarMenu.classList.remove('show');
+        });
+
+        // Change navbar color on scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 0) {
+                navbar.style.backgroundColor = '#ffffff';
+            } else {
+                navbar.style.backgroundColor = '#ffffff';
+            }
+        });
+    });
+
+    // document.getElementById('waveButton').onmousemove = function (e) {
+    //     const x = e.pageX - e.target.offsetLeft;
+    //     const y = e.pageY - e.target.offsetTop;
+
+    //     e.target.style.setProperty('--x', ${x}px);
+    //     e.target.style.setProperty('--y', ${y}px);
+    // };
+
+    AOS.init();
+</script>
+</body>
+</html>
